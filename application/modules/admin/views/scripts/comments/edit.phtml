@@ -1,0 +1,24 @@
+
+<?php
+//desc($this->comment);
+?>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Komentarz do artykułu <?php echo "\" " . $this->comment['article_title'] . " \"" ?>.</h2>
+        <p>Autor: <?php echo $this->comment['customer_username']; ?></p>
+        <p>Utworzony: <?php echo date('Y-m-d H:i', $this->comment['date_created']); ?>.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <?php echo $this->form; ?>
+
+        <a href="<?php
+        echo $this->url(array(
+            'page' => isset($this->page) ? $this->page : 0), 'comments');
+        ?>" class="btn btn-default">Anuluj</a>
+
+    </div>
+</div>
